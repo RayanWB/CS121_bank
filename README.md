@@ -3,6 +3,8 @@ Java program that manages bank information
 
 # UML
 ```mermaid
+class diagram
+
 interface HasMenu{
     + string menu()
     + void start()
@@ -53,4 +55,7 @@ HasMenu <|-- CheckingAccount
 HasMenu <|-- User
 CheckingAccount <-- SavingsAccount
 User <--Customer
+```
+```mermaid
+    info
 ```
