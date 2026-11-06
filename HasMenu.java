@@ -2,6 +2,8 @@
 
 import java.util.*
 
-public class HasMenu {
-
+public interface HasMenu {
+	public string menu() {
+		
+	} // end menu
 } // end class def
