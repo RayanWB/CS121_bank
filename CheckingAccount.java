@@ -1,6 +1,8 @@
 // CheckingAccount.java
 
-public class CheckingAccount {
+import java.util.*;
+
+public class CheckingAccount implements HasMenu {
 	private double balance;
 
 	public CheckingAccount() {
@@ -11,21 +13,40 @@ public class CheckingAccount {
 		this.balance = balance;
 	} // end constructor
 	
-	public static main() {
-		new CheckingAccount()
+	public static void main() {
+		new CheckingAccount();
 	} // end main
 	
 	public String menu() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("0) quit");
-		System.out.println("1) check balance)");
-		System.out.println("2) make a deposit");
-		System.out.println("3) make a withdrawal");
-		String response = input.nextLine(); 
+		boolean keepGoing;
+		while(keepGoing) {
+			System.out.println("0) quit");
+			System.out.println("1) check balance)");
+			System.out.println("2) make a deposit");
+			System.out.println("3) make a withdrawal");
+			String response = input.nextLine(); 
 		return response;
+		} // end while
 	} // end menu
 	
-	public void start() {
+	public String start() {
+		boolean keepGoing = true;
+		String response;
+		while(keepGoing) {
+			response = this.menu();
+			if (response.isEqual("0")) { // quit
+				keepGoing = false;
+			} else if (response.isEqual("1")) { // check balance
+				System.out.println(this.getBalanceString());
+			} else if (response.isEqual("2")) { // make deposit
+				this.makeDeposit();
+			} else if (response.isEqual("3")) { // make withdrawal
+				this.makeWithdrawal();
+			} else {
+				System.out.println("Invalid input; try again.");
+			} // end if
+		} // end while
 	} // end start
 	
 	public double getBalance() {
@@ -33,7 +54,7 @@ public class CheckingAccount {
 	} // end getBalance
 	
 	public string getBalanceString() {
-		String balanceString = this.balance.toString(); // need to find the right method for this
+		String balanceString = "$" + this.balance.toString(); // need to find the right method for this
 		return balanceString;
 	} // end getBalanceString
 

@@ -1,9 +1,8 @@
 // HasMenu.java
 
-import java.util.*
+import java.util.*;
 
 public interface HasMenu {
-	public string menu() {
-		
-	} // end menu
+	public String menu();
+	public void start();
 } // end class def
