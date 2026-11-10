@@ -53,7 +53,7 @@ public class CheckingAccount implements HasMenu {
 		return this.balance;
 	} // end getBalance
 	
-	public string getBalanceString() {
+	public String getBalanceString() {
 		String balanceString = "$" + this.balance.toString(); // need to find the right method for this
 		return balanceString;
 	} // end getBalanceString
