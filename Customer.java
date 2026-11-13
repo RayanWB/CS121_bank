@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class Customer extends User {
+public class Customer extends User implements HasMenu {
 	private CheckingAccount checking;
 	private SavingsAccount savings;
 
